@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+h1, .big-title, .slogan {
+  font-family: 'Bebas Neue', cursive;
+  text-transform: uppercase;
+}
+
+/* HEADER */
+
+/* Mon Header */
+header{
+  margin-bottom: 100px;
+  width: 100vw;
+  height: 70vh;
+  color: white;
+}
+/* Mon Header */
+
+/* Mon header h1 */
+.header1{
+  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhh_k6HNkOOfcVZ5inRpaOvumzTQSlfzxNQX6sw1SrncvVkDThg9fq9KaCibfSRHWIK5Y5tmWSvf49YZ80YiWblZ2eLuALAgI97gdMRnQddqxdRsPG-aVvN0caTZq0L6JfSB1wmLP4jwGPNNWBA_FiZq3-g3wue3K7ZqwlTKt_-jWxfcEVLtd-gMF54LUhX/s1600/le-troisieme-maillot-blanc-et-or-d-al-nassr-24-25-devoile.jpg");
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+/* Mon header h1 */
+
+/* Ma classe logo */
+.logo{ 
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+/* Ma classe logo */
+
+/* Mon header container */
+.header-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+}
+/*Mon header container */
+
+/* Ma navbar */
+.navbar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.navbar ul a{
+  color: white;
+  transition: color 0.3s;
+}
+.navbar ul a:hover{
+  color: black;
+}
+/* Ma navbar */
+
+/* Ma classe icone */
+.icone{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+/* Ma classe icone */ 
+
+/* Ma classe hambuger icon */
+.hamburger-icon{
+  display: flex;
+  flex-direction: column;
+}
+/* Ma classe hambuger icon */
+
+/* Ma classe hambuger */
+.hamburger{
+  z-index: 1000;
+  position: fixed;
+  top: 40px;
+  right: 150px;
+}
+.hamburger ul{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  justify-content: space-between;
+  height: 55vh;
+  width: 20vw;
+  padding: 2rem 2rem;
+}
+.hamburger a{
+  color: white;
+}
+/* Ma classe humbuger */
+
+/* Mon slogan */
+.slogan{
+  position: absolute;
+  left: 50%;
+  font-size: 4rem;
+  top: 150px;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 1.2;
+  max-width: 90%;
+}
+/* Mon slogan */
+
+/* Media query pour tablette */
+@media screen and (min-width: 769px) and (max-width: 898px){
+  .hamburger ul{
+    height: 50vh;
+    width: 35vw;
+  }
+}
+/* Media query pour tablette */
+
+/* Media query pour tablette à partir de 899px */
+@media screen and (min-width:899px) and (max-width: 1024px){
+  .hamburger ul{
+    width: 30vw;
+  }
+}
+/* Media query pour tablette à partir de 899px */
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  .slogan {
+    top: 100px;
+  }
+}
