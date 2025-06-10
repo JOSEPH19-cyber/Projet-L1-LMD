@@ -141,6 +141,9 @@ header{
 
 /* Media query pour mobile */
 @media screen and (max-width: 768px){
+  .header{
+    height: 60vh;
+  }
   .logo{
     font-size: 1rem;
   }
@@ -149,11 +152,28 @@ header{
   }
   .slogan{
     font-size: 2.5rem;
+    color: black;
   }
-  .hamburger{
+  .hamburger {
     top: 40px;
-    right: 5px;
-    height: 50vh;
+    right: 0px;
+  }
+  .hamburger ul{
+    height: 60vh;
+    width: 30vw;
+    padding-left: 3rem;
+    padding-top: 1rem;
   }
 }
 /* Media query pour mobile */
+
+/* Media query pour mobile max-width: 425px */
+@media screen and (max-width: 425px){
+  .hamburger ul{
+    padding-left: 2rem;
+  }
+  .hamburger ul{
+    width: 40vw;
+  }
+}
+/* Media query pour mobile max-width: 425px */
