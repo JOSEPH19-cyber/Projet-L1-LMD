@@ -7,7 +7,6 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
 }
 h1, .big-title, .slogan {
   font-family: 'Bebas Neue', cursive;
@@ -87,10 +86,10 @@ header{
   z-index: 1000;
   position: fixed;
   top: 40px;
-  right: 150px;
+  right: 0px;
 }
-.hamburger ul{
-  display: flex;
+.hamburger-list{
+  display: none;
   flex-direction: column;
   background-color: black;
   justify-content: space-between;
@@ -102,6 +101,12 @@ header{
   color: white;
 }
 /* Ma classe humbuger */
+
+/* Ma classe open */
+.hamburger-list.open{
+  display: flex;
+}
+/* Ma classe open */
 
 /* Mon slogan */
 .slogan{
@@ -116,9 +121,13 @@ header{
 }
 /* Mon slogan */
 
+.fas{
+  font-size: 1rem;
+}
+
 /* Media query pour tablette */
 @media screen and (min-width: 769px) and (max-width: 898px){
-  .hamburger ul{
+  .hamburger-list{
     height: 50vh;
     width: 35vw;
   }
@@ -127,7 +136,7 @@ header{
 
 /* Media query pour tablette à partir de 899px */
 @media screen and (min-width:899px) and (max-width: 1024px){
-  .hamburger ul{
+  .hamburger-list{
     width: 30vw;
   }
 }
@@ -154,11 +163,7 @@ header{
     font-size: 2.5rem;
     color: black;
   }
-  .hamburger {
-    top: 40px;
-    right: 0px;
-  }
-  .hamburger ul{
+  .hamburger-list{
     height: 60vh;
     width: 30vw;
     padding-left: 3rem;
@@ -169,11 +174,66 @@ header{
 
 /* Media query pour mobile max-width: 425px */
 @media screen and (max-width: 425px){
-  .hamburger ul{
+  .hamburger-list{
     padding-left: 2rem;
-  }
-  .hamburger ul{
     width: 40vw;
   }
 }
 /* Media query pour mobile max-width: 425px */
+
+/*___________________________________________________________*/
+
+/* style de ma première section */
+#Maillot{
+  margin-bottom: 200px;
+}
+
+/* style général */
+.hab-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* style général */
+
+/* Mon .hab-container1*/
+#Maillot h2{
+  text-align: center;
+  margin-bottom: 100px;
+}
+.hab-container1{
+  margin-left: 60px;
+  border: 1px solid black;
+  width: 40vh;
+  height: auto;
+  padding: 1rem;
+}
+.hab-container1 img{
+  width: 100%;
+  height: 200px;
+  border: 1px solid black;
+}
+.hab2{
+  border: 1px solid black;
+  background-color: blue;
+  text-align: center;
+}
+/* Mon hab-container 1 */
+
+
+/* style de ma deuxième section */
+#cargo{
+  margin-bottom: 200px;
+}
+#cargo h2{
+  text-align: center;
+  margin-bottom: 100px;
+}
+/* style de ma deuxième section */
+
+/* style de ma troisième section */
+#Basket h2{
+  text-align: center;
+  margin-bottom: 100px;
+}
+/* style de ma troisième section */
