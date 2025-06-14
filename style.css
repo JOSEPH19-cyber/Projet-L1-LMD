@@ -75,7 +75,7 @@ header{
 /* Ma classe icone */ 
 
 /* Ma classe hambuger icon */
-.hamburger-icon{
+.hamburger-container{
   display: flex;
   flex-direction: column;
 }
@@ -105,6 +105,9 @@ header{
 /* Ma classe open */
 .hamburger-list.open{
   display: flex;
+}
+.hamburger-icon{
+  cursor: pointer;
 }
 /* Ma classe open */
 
