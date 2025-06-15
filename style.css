@@ -87,13 +87,14 @@ header{
   position: fixed;
   top: 40px;
   right: 0px;
+  height: 70vh;
 }
 .hamburger-list{
   display: none;
   flex-direction: column;
   background-color: black;
   justify-content: space-between;
-  height: 55vh;
+  height: 95%;
   width: 20vw;
   padding: 2rem 2rem;
 }
@@ -167,8 +168,7 @@ header{
     color: black;
   }
   .hamburger-list{
-    height: 60vh;
-    width: 30vw;
+    width: 50vw;
     padding-left: 3rem;
     padding-top: 1rem;
   }
@@ -179,7 +179,6 @@ header{
 @media screen and (max-width: 425px){
   .hamburger-list{
     padding-left: 2rem;
-    width: 40vw;
   }
 }
 /* Media query pour mobile max-width: 425px */
@@ -196,6 +195,7 @@ header{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 /* style général */
 
@@ -206,7 +206,6 @@ header{
 }
 .hab-container1{
   margin-left: 60px;
-  border: 1px solid black;
   width: 40vh;
   height: auto;
   padding: 1rem;
