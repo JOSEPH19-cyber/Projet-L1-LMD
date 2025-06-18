@@ -7,10 +7,12 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
+   background-color: #fdfdfd;;
 }
-h1, .big-title, .slogan {
+h1, h2, .slogan {
   font-family: 'Bebas Neue', cursive;
   text-transform: uppercase;
+  text-shadow: 2px 2px 4px black;
 }
 
 /* HEADER */
@@ -30,9 +32,9 @@ header{
   background-position: center top;
   background-size: 100% auto;
   background-repeat: no-repeat;
-}
+} 
 /* Mon header h1 */
-
+   
 /* Ma classe logo */
 .logo{ 
   padding: 0.5rem;
@@ -186,56 +188,108 @@ header{
 /*___________________________________________________________*/
 
 /* style de ma première section */
-#Maillot{
+#maillot{
   margin-bottom: 200px;
+} 
+#maillot h2{
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 70px;
+  transition: all 0.3s ease;
 }
-
-/* style général */
+#maillot  h2:hover{
+   transform: scale(1.05);
+   color: rgba(30, 50, 80, 0.95);
+   text-shadow: 2px 2px 4px rgba(30, 50, 80, 0.95);
+}
 .hab-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: space-evenly;
+  gap: 1rem
 }
-/* style général */
-
-/* Mon .hab-container1*/
-#Maillot h2{
+.product-card{
+  height: 55vh;
+  width: 20vw;
+  border-radius: 5px;
   text-align: center;
-  margin-bottom: 100px;
-}
-.hab-container1{
-  margin-left: 60px;
-  width: 40vh;
-  height: auto;
   padding: 1rem;
+  margin-bottom: 2rem;
 }
-.hab-container1 img{
-  width: 100%;
+.product-info{
+  font-size: 16px;
+  text-shadow: 1px 1px 2px black;
+}
+.product-card img{
+  width: 200px;
   height: 200px;
   border: 1px solid black;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
-.hab2{
-  border: 1px solid black;
-  background-color: blue;
-  text-align: center;
+.product-card img:hover{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
-/* Mon hab-container 1 */
+.button{
+  height: 35px;
+  width: 120px;
+  border-radius: 5px;
+  background-color: rgba(30, 50, 80, 0.95);
+  border: 1px solid #fff ;
+  color: #fff;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.button:hover{
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
 
 
-/* style de ma deuxième section */
-#cargo{
-  margin-bottom: 200px;
+/* === Responsive Tablette === */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  .product-card {
+    width: 40vw;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .product-card img{
+  width: 250px;
+  height: 250px;
+  }
+  .product-card img, .button{
+    transition: all 0.4s ease-in-out;
+  }
+  .product-info h3, .product-info h4 {
+    font-size: 15px;
+  }
 }
-#cargo h2{
-  text-align: center;
-  margin-bottom: 100px;
-}
-/* style de ma deuxième section */
+/* === Responsive Mobile === */
+@media screen and (max-width: 768px){
+  #maillot h2{
+  font-size: 50px;
+  }
+  .product-card{
+    height: auto;
+    width: 45vw;
+    border: 1px solid black;
+  }
+  .product-info{
+    font-size: 8px;
+  }
+  .product-card img{
+    width: 125px;
+    height: 125px;
+    transition: all 0.4s ease-in-out;
+  }
+  .button{
+    height: 30px;
+    width: 100px;
+    transition: all 0.4s ease-in-out;
+  }
 
-/* style de ma troisième section */
-#Basket h2{
-  text-align: center;
-  margin-bottom: 100px;
 }
-/* style de ma troisième section */
