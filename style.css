@@ -7,7 +7,7 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-   background-color: #fdfdfd;;
+   background-color: #fdfdfd;
 }
 h1, h2, .slogan {
   font-family: 'Bebas Neue', cursive;
@@ -187,17 +187,17 @@ header{
 
 /*___________________________________________________________*/
 
-/* style de ma première section */
-#maillot{
+/* style des mes sections  */
+#maillot, #cargo, #basket{
   margin-bottom: 200px;
 } 
-#maillot h2{
+#maillot h2, #cargo h2, #basket h2{
   margin-bottom: 100px;
   text-align: center;
   font-size: 70px;
   transition: all 0.3s ease;
 }
-#maillot  h2:hover{
+#maillot  h2:hover, #cargo h2:hover, #basket h2:hover{
    transform: scale(1.05);
    color: rgba(30, 50, 80, 0.95);
    text-shadow: 2px 2px 4px rgba(30, 50, 80, 0.95);
@@ -241,7 +241,7 @@ header{
   border: 1px solid #fff ;
   color: #fff;
   font-size: 12px;
-  text-shadow: 1px 1px 2px white;
+  text-shadow: 1px 1px 1px white;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -256,6 +256,7 @@ header{
   .product-card {
     width: 40vw;
     height: auto;
+    flex: 0 0 45%;
     margin-bottom: 2rem;
   }
   .product-card img{
@@ -271,7 +272,7 @@ header{
 }
 /* === Responsive Mobile === */
 @media screen and (max-width: 768px){
-  #maillot h2{
+  #maillot h2, #cargo h2, #basket h2{
   font-size: 50px;
   margin-bottom: 2rem;
   }
@@ -281,11 +282,12 @@ header{
   .product-card{
     width: 45vw; 
     height: auto;
-   margin-bottom: 1rem;
+    flex: 0 0 45%;
+    margin-bottom: 1rem;
     padding: 0.2rem;
   }
   .product-info{
-    font-size: 15px;
+    font-size: 14px;
   }
   .product-card img{
     width: 100%;
@@ -298,4 +300,91 @@ header{
     transition: all 0.4s ease-in-out;
   }
 
+}
+
+
+/* FOOTER */
+footer{
+  background-color: rgba(30, 50, 80, 0.95);
+  color: white;
+}
+.footer-container{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 5vw;
+  margin-bottom: 3rem;
+}
+.footer-container h2{
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+}
+.footer-container a{
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+.footer-container a:hover{
+  transform: scale(1.05);
+  text-shadow: 1px 1px 1px black;
+  color: black;
+}
+.footer-contact, .footer-links, .footer-socials{
+  line-height: 2;
+  padding: 2rem;
+}
+.footer-nav ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-copy{
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  padding: 1rem;
+}
+.footer-socials i {
+  font-size: 1.5rem; 
+}
+
+/* Responsive tablette */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  .footer-container h2, .footer-copy{
+    font-size: 20px;
+  }
+  .footer-contact, .footer-links, .footer-socials{
+    height: auto;
+    padding: 2rem;
+  }
+  .footer-socials{
+    width: 35%;
+  }
+  .footer-socials i {
+    font-size: 1rem; 
+  }
+
+}
+/* Responsive mobile */
+@media screen and (max-width: 768px){
+  .footer-container{
+    flex-direction:  column;
+    gap: 2vw;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+  .footer-contact, .footer-links, .footer-socials{
+    text-align: center;
+    padding: 1rem;
+  }
+  .footer-copy{
+    font-size: 20px;
+  }
+  .footer-socials i {
+    font-size: 1.3rem;
+    margin-right: 0.3rem; 
+  }
 }
