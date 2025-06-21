@@ -188,16 +188,34 @@ header{
 /*___________________________________________________________*/
 
 /* style des mes sections  */
-#maillot, #cargo, #basket{
+#maillot,
+#cargo, 
+#basket, 
+#club, 
+#selection, 
+#collector,
+#retro{
   margin-bottom: 200px;
 } 
-#maillot h2, #cargo h2, #basket h2{
+#maillot h2, 
+#cargo h2, 
+#basket h2, 
+#club h2, 
+#selection h2, 
+#collector h2, 
+#retro h2{
   margin-bottom: 100px;
   text-align: center;
   font-size: 70px;
   transition: all 0.3s ease;
 }
-#maillot  h2:hover, #cargo h2:hover, #basket h2:hover{
+#maillot  h2:hover, 
+#cargo h2:hover, 
+#basket h2:hover, 
+#club h2:hover, 
+#selection h2:hover, 
+#collector h2:hover, 
+#retro h2:hover{
    transform: scale(1.05);
    color: rgba(30, 50, 80, 0.95);
    text-shadow: 2px 2px 4px rgba(30, 50, 80, 0.95);
@@ -249,6 +267,10 @@ header{
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }
+.button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
 
 
 /* === Responsive Tablette === */
@@ -272,7 +294,13 @@ header{
 }
 /* === Responsive Mobile === */
 @media screen and (max-width: 768px){
-  #maillot h2, #cargo h2, #basket h2{
+  #maillot h2, 
+  #cargo h2, 
+  #basket h2,
+  #club h2, 
+  #selection h2, 
+  #collector h2, 
+  #retro h2{
   font-size: 50px;
   margin-bottom: 2rem;
   }
