@@ -12,7 +12,8 @@
 <body>
 
     <!--Header-->
-    <header class="header1">
+    <header class="header3">
+        <div class="header-overlay"></div>
         <div class="header-container">
             <div class="logo">
                 <h1>N-store</h1>
@@ -21,24 +22,26 @@
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="maillots.html">Maillots</a></li>
-                    <li><a href="cargos.html">Cargos</a></li>
+                    <li class="active"><a href="cargos.html">Cargos</a></li>
                     <li><a href="baskets.html">Baskets</a></li>
-                    <li><a href="contacts.html">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="icone">
                 <div class="hamburger-icon">
-                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-bars hamburger-icon" aria-expanded="false" aria-controls="menu"></i>
                     <div class="hamburger">
                         <ul class="hamburger-list">
+                            <li><i class="fas fa-times close-icon"></i></li>
                             <li><a href="index.html">Accueil</a></li>
                             <li><a href="Maillots.html">Maillots</a></li>
                             <li><a href="cargos.html">Cargos</a></li>
                             <li><a href="baskets.html">Baskets</a></li>
-                            <li><a href="contacts.html">Contact</a></li>
-                            <li><a href="#cargo">Collection cargos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#cargo" class="menuLinks">Collection cargos</a></li>
                         </ul>
                     </div>
+                    <div class="overlay"></div>
                 </div>
                 <div>
                     <i class="fas fa-shopping-cart"></i>
@@ -389,8 +392,8 @@
         <div class="footer-container">
             <div class="footer-contact">
                 <h2>Contacts</h2>
-                <p>Adresse email: <a href="mailto:Nehemientama082@gmail.com">Nehemientama082@gmail.com</a></p>
-                <p>Téléphone<i class="fas fa-phone"></i> : <a href="tel:+243986360963">+243 986 360 963</a></p>
+                <p>Adresse email: <a href="mailto:Nehemientama082@gmail.com" target="_blank">Nehemientama082@gmail.com</a></p>
+                <p>Téléphone<i class="fas fa-phone"></i> : <a href="tel:+243986360963" target="_blank">+243 986 360 963</a></p>
             </div>
             <div class="footer-links">
                 <h2>Navigations</h2>
@@ -407,13 +410,13 @@
             <div class="footer-socials">
                 <h2>Réseaux sociaux</h2>
                 <p>
-                    <i class="fab fa-instagram"></i> : <a href="https://www.instagram.com/n_store_2099?utm_source=qr&igsh=MXZvcmlva3ZpdDBrbA==">n_store_2099</a>
+                    <i class="fab fa-instagram"></i> : <a href="https://www.instagram.com/n_store_2099?utm_source=qr&igsh=MXZvcmlva3ZpdDBrbA==" target="_blank">n_store_2099</a>
                 </p>
                 <p>
-                    <i class="fab fa-tiktok"></i> : <a href="https://vm.tiktok.com/ZMSaY6a4R/">N_STORE__<span class="flag-icon flag-icon-cd"></span></a>
+                    <i class="fab fa-tiktok"></i> : <a href="https://vm.tiktok.com/ZMSaY6a4R/" target="_blank">N_STORE__<span class="flag-icon flag-icon-cd"></span></a>
                 </p>
                 <p>
-                    <i class="fab fa-snapchat-ghost"></i> : <a href="https://www.snapchat.com/add/nstore2099?share_id=Yo28Zuycsko&locale=fr-FR">nstore2099</a>
+                    <i class="fab fa-snapchat-ghost"></i> : <a href="https://www.snapchat.com/add/nstore2099?share_id=Yo28Zuycsko&locale=fr-FR" target="_blank">nstore2099</a>
                 </p>
             </div>
         </div>
