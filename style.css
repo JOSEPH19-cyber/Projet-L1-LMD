@@ -1,3 +1,5 @@
+/* ----------------- STYLE GENERALE--------------------------*/
+
 *{
     margin: 0;
     padding: 0;
@@ -9,185 +11,296 @@ body {
   font-family: 'Poppins', sans-serif;
    background-color: #fdfdfd;
 }
+body.no-scroll {
+  overflow: hidden;
+}
 h1, h2, .slogan {
   font-family: 'Bebas Neue', cursive;
   text-transform: uppercase;
   text-shadow: 2px 2px 4px black;
 }
 
-/* HEADER */
+/* ----------------- STYLE GENERALE--------------------------*/
 
-/* Mon Header */
+
+
+
+/*-----------------------HEADER-------------------------------------*/
+
 header{
   margin-bottom: 100px;
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
   color: white;
+  position: relative;
+  z-index: 1;
 }
-/* Mon Header */
 
-/* Mon header h1 */
+/* overlay */
+.header-overlay{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .header1{
-  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhh_k6HNkOOfcVZ5inRpaOvumzTQSlfzxNQX6sw1SrncvVkDThg9fq9KaCibfSRHWIK5Y5tmWSvf49YZ80YiWblZ2eLuALAgI97gdMRnQddqxdRsPG-aVvN0caTZq0L6JfSB1wmLP4jwGPNNWBA_FiZq3-g3wue3K7ZqwlTKt_-jWxfcEVLtd-gMF54LUhX/s1600/le-troisieme-maillot-blanc-et-or-d-al-nassr-24-25-devoile.jpg");
+  background-image: url("imges/picture1.jpg");
+}
+
+.header2{
+  background-image: url("imges/picture2.jpg");
+}
+
+.header3{
+  background-image: url("imges/picture3.jpg");
+}
+
+.header4{
+  background-image: url("imges/picture2.jpg");
+}
+
+.header1, .header2, .header3, .header4{
   background-position: center top;
   background-size: 100% auto;
   background-repeat: no-repeat;
 } 
-/* Mon header h1 */
    
-/* Ma classe logo */
 .logo{ 
   padding: 0.5rem;
   font-size: 1.5rem;
 }
-/* Ma classe logo */
 
-/* Mon header container */
 .header-container{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 1rem;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
-/*Mon header container */
 
-/* Ma navbar */
+.header-container.scrolled {
+  background-color: rgba(50, 50, 50, 0.85);
+  transition: background-color 0.3s ease;
+}
+
 .navbar ul{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 1rem;
 }
+
 .navbar ul a{
   color: white;
   transition: color 0.3s;
+  font-size: 20px;
 }
+
 .navbar ul a:hover{
   color: black;
 }
-/* Ma navbar */
 
-/* Ma classe icone */
 .icone{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 1rem;
 }
-/* Ma classe icone */ 
 
-/* Ma classe hambuger icon */
 .hamburger-container{
   display: flex;
   flex-direction: column;
 }
-/* Ma classe hambuger icon */
 
-/* Ma classe hambuger */
-.hamburger{
-  z-index: 1000;
-  position: fixed;
-  top: 40px;
-  right: 0px;
-  height: 70vh;
+.active{
+  background-color: rgba(10, 25, 47, 0.85);
+  text-align: center;
+  width: 100px;
+  border-radius: 10px;
 }
+
+.hamburger{
+  z-index: 999;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+}
+
 .hamburger-list{
   display: none;
   flex-direction: column;
-  background-color: black;
-  justify-content: space-between;
-  height: 95%;
-  width: 20vw;
+  background-color: rgba(20, 20, 20, 0.95);
+  justify-content: space-evenly;
+  align-items: baseline;
+  position: relative;
+  height: 100%;
+  width: 30vw;
   padding: 2rem 2rem;
+  opacity: 0;
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
-.hamburger a{
-  color: white;
-}
-/* Ma classe humbuger */
 
-/* Ma classe open */
+.hamburger-list a{
+  color: #f0f0f0;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.hamburger-list a:hover {
+  color: #ffd700;
+}
+
+i{
+  color: black;
+}
+
+.close-icon{
+  color: #f0f0f0;
+  position: absolute;
+  top: 20px;
+  right: 345px;
+  cursor: pointer;
+}
+
 .hamburger-list.open{
   display: flex;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
+
 .hamburger-icon{
   cursor: pointer;
 }
-/* Ma classe open */
 
-/* Mon slogan */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  opacity: 0;
+  visibility: hidden;
+  z-index: 998;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.overlay.overlay-open {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeInOverlay 0.4s ease;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay.overlay-open {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeInOverlay 0.4s ease;
+}
+
 .slogan{
+  z-index: 998;
   position: absolute;
   left: 50%;
-  font-size: 4rem;
   top: 150px;
+  font-size: 6rem; 
   transform: translateX(-50%);
   text-align: center;
   line-height: 1.2;
   max-width: 90%;
 }
-/* Mon slogan */
 
 .fas{
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
-/* Media query pour tablette */
-@media screen and (min-width: 769px) and (max-width: 898px){
-  .hamburger-list{
-    height: 50vh;
-    width: 35vw;
-  }
-}
-/* Media query pour tablette */
+/*-----------------------HEADER-------------------------------------*/
 
-/* Media query pour tablette à partir de 899px */
-@media screen and (min-width:899px) and (max-width: 1024px){
-  .hamburger-list{
-    width: 30vw;
-  }
-}
-/* Media query pour tablette à partir de 899px */
+
+
+
+/*-------------------------------MEDIA QUERY HEADER TABLETTE----------------------------------*/
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
-  .slogan {
-    top: 100px;
+  .header1{
+    background-size: cover;
   }
-}
-
-/* Media query pour mobile */
-@media screen and (max-width: 768px){
-  .header{
-    height: 60vh;
+  .header-container{
+    padding: 0.5rem;
   }
-  .logo{
-    font-size: 1rem;
+  .navbar ul a{
+    font-size: 15px;
   }
-  .navbar{
-    display: none;
+  .hamburger-list{
+    width: min(50vw, 300px);
+  }
+  .close-icon{
+    top: 20px;
+    right: 20px;
   }
   .slogan{
-    font-size: 2.5rem;
-    color: black;
-  }
-  .hamburger-list{
-    width: 50vw;
-    padding-left: 3rem;
-    padding-top: 1rem;
+    font-size: 4.5rem;
+     transition: font-size 0.4s ease;
   }
 }
-/* Media query pour mobile */
 
-/* Media query pour mobile max-width: 425px */
-@media screen and (max-width: 425px){
+/*-------------------------------MEDIA QUERY HEADER TABLETTE----------------------------------*/
+
+
+
+
+/*-------------------------------MEDIA QUERY HEADER MOBILE------------------------------------*/
+
+@media screen and (max-width: 768px){
+  .header1{
+    background-size: cover;
+  } 
+  .logo{ 
+    font-size: 1.2rem;
+  }
+  .icone{
+    align-items: center;
+  }
+  .navbar{
+      display: none;
+    }
   .hamburger-list{
-    padding-left: 2rem;
+    width: 80vw;
+  }
+  .close-icon{
+    right: 20px;
+  }
+  .slogan{
+    font-size: 3.5rem;
   }
 }
-/* Media query pour mobile max-width: 425px */
 
-/*___________________________________________________________*/
+/*-------------------------------MEDIA QUERY HEADER MOBILE------------------------------------*/
 
-/* style des mes sections  */
+
+
+
+/*--------------------------------STYLE SECTIONS----------------------------------------------*/
+
 #maillot,
 #cargo, 
 #basket, 
@@ -271,9 +384,13 @@ header{
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
+/*--------------------------------STYLE SECTIONS----------------------------------------------*/
 
 
-/* === Responsive Tablette === */
+
+
+/*-------------------------------------MEDIA QUERY SECTIONS TABLETTE----------------------------*/
+
 @media screen and (min-width: 769px) and (max-width: 1024px){
   .product-card {
     width: 40vw;
@@ -292,7 +409,13 @@ header{
     font-size: 15px;
   }
 }
-/* === Responsive Mobile === */
+
+/*-------------------------------------MEDIA QUERY SECTIONS TABLETTE----------------------------*/
+
+
+
+
+/*-----------------------------------MEDIA QUERY SECTIONS MOBILE---------------------------------*/
 @media screen and (max-width: 768px){
   #maillot h2, 
   #cargo h2, 
@@ -330,8 +453,13 @@ header{
 
 }
 
+/*-----------------------------------MEDIA QUERY SECTIONS MOBILE---------------------------------*/
 
-/* FOOTER */
+
+
+
+/*------------------------------------FOOTER-----------------------------------------------------*/
+
 footer{
   background-color: rgba(30, 50, 80, 0.95);
   color: white;
@@ -378,8 +506,16 @@ footer{
 .footer-socials i {
   font-size: 1.5rem; 
 }
+.footer-container i{
+  color: white;
+}
 
-/* Responsive tablette */
+/*------------------------------------FOOTER-----------------------------------------------------*/
+
+
+
+
+/*-----------------------------MEDIA QUERY FOOTER TABLETTE---------------------------------------*/
 @media screen and (min-width: 769px) and (max-width: 1024px){
   .footer-container h2, .footer-copy{
     font-size: 20px;
@@ -394,9 +530,14 @@ footer{
   .footer-socials i {
     font-size: 1rem; 
   }
-
 }
-/* Responsive mobile */
+
+/*-----------------------------MEDIA QUERY FOOTER TABLETTE---------------------------------------*/
+
+
+
+
+/*-----------------------------MEDIA QUERY FOOTER MOBILE------------------------------------------*/
 @media screen and (max-width: 768px){
   .footer-container{
     flex-direction:  column;
@@ -416,3 +557,4 @@ footer{
     margin-right: 0.3rem; 
   }
 }
+/*-----------------------------MEDIA QUERY FOOTER MOBILE------------------------------------------*/
