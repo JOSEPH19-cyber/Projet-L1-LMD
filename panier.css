@@ -10,12 +10,6 @@
 
 body{
     font-family: 'poppins', sans-serif;
-    background-image: url("images/fond164.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 h1{
@@ -28,12 +22,14 @@ h1{
 
 
 
+
+
 /*-------------------------------STYLE DU HEADER--------------------------------------------*/
 header{
     width: 100vw;
     margin-bottom: 60px;
     height: auto;
-    color:  white;
+    color:  black;
 }
 
 .header-content{
@@ -58,19 +54,12 @@ header{
 
 .menu-list a {
     font-size: 20px;
-    color: white;
+    color: black;
     transition: color 0.3s ease;
 }
 
 .menu-list a:hover {
     color: #6c757d; 
-}
-
-.active{
-  background-color: rgba(10, 25, 47, 0.85);
-  text-align: center;
-  width: 100px;
-  border-radius: 10px;
 }
 
 .close-icon, .hamburger-icon{
@@ -127,6 +116,10 @@ header{
         transform: translateY(0);
     }
 
+    .menu-list a{
+        color: white;
+    }
+
     .close-icon, .hamburger-icon{
         display: flex !important;
         font-size: 2rem;
@@ -143,114 +136,43 @@ header{
 
 
 
-
-/*------------------------------STYLE DU FORMULAIRE--------------------------------------------------*/
-
-section{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    width: 40vw;
-    padding: 1rem;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
 }
 
-section h2{
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    color: white;
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    border: 2px solid white;
-    height: 80%;
-    width: 80%;
-    border-radius: 10px;
-    color: white;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+th {
+  background-color: #333;
+  color: white;
 }
 
-.input-icon label{
-    font-size: 20px;
+td {
+  font-size: 0.95rem;
 }
 
-.input-wrapper input{
-    border-radius: 10px;
-    height: 3rem;
-    width: 20rem;
-}
-
-.input-wrapper i{
-    position: relative;
-    left: -2rem;
-    color: black;
-}
-
-.input-wrapper ::placeholder{
-    position: relative;
-    right: -1rem;
-}
 
 button {
-    font-size: 20px;
-    border-radius: 10px;
-    width: 6rem;
-    height: 3rem;
-    background-color: #6c757d; 
-    color: white;
-    border: none;
-    border: 1px solid black;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 6px 10px;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #5a6268; 
+  background-color: #e74c3c;
 }
 
-/*------------------------------STYLE DU FORMULAIRE--------------------------------------------------*/
 
 
 
 
-/*------------------------------RESPONSIVE FORMULAIRE TABLETTE----------------------------------------*/
 
-@media screen and (min-width: 769px) and (max-width: 1024px){
-    section{
-        width: 70vw;
-    }
-}
-/*------------------------------RESPONSIVE FORMULAIRE TABLETTE----------------------------------------*/
-
-
-
-
-/*-------------------------------RESPONSIVE FORMULAITRE MOBILE---------------------------------------------------*/
-
-@media screen and (max-width: 768px){
-    section{
-        width: 80vw;
-    }
-
-    section h2{
-        font-size: 20px;
-    }
-
-    form{
-        width: 90%;
-        padding-left: 8px;
-        z-index: 999;
-    }
-
-    .input-wrapper input{
-        width: 15rem;
-    }
-
-}
-
-/*-------------------------------RESPONSIVE FORMULAITRE MOBILE---------------------------------------------------*/

@@ -3,32 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N-store</title>
+    <title>Inscription - N-store</title>
     <link rel="stylesheet" href="contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <section>
-        <h1>Connexion</h1>
-        <div class="input-box">
-            <input type="text" placeholder="Nom utilisateur">
-            <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="input-box">
-            <input type="password" placeholder="Mot de passe">
-            <i class="fa-solid fa-lock"></i>
-        </div>
-        <div class="remember-forgot">
-            <label><input type="checkbox">Se souvenir de 
-            moi</label>
-            <a href="">Mot de passe oublié ?</a>
-        </div>
-        <button class="login-btn">Se connecter</button>
+    <div class="header-overlay"></div>
 
-        <div class="register-link">
-            <p>Pas de compte ?<a href="#">Inscription</a></p>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>N-store</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="menu-list">
+                    <li><i class="fas fa-times close-icon"></i></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="maillots.html">Maillots</a></li>
+                    <li><a href="cargos.html">Cargos</a></li>
+                    <li><a href="baskets.html">Baskets</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <i class="fas fa-bars hamburger-icon"></i>
         </div>
-    </section>
+    </header>
+
+    <main>
+        <section >
+            <h2>Formulaire d'inscription</h2>
+            <form id="registration-form" method="post">
+                <div class="input-icon">
+                    <label for="username">Nom d'utilisateur</label><br>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" required placeholder="Nom d'utilisateur">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <div class="input-icon">
+                    <label for="password">Mot de passe</label><br>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" required placeholder="Mot de passe">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit">S'inscrire</button>
+                </div>
+                <p class="message"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="contact.js"></script>
 </body>
 </html>

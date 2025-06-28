@@ -48,26 +48,33 @@ header{
 }
 
 .header1{
-  background-image: url("imges/picture1.jpg");
+  background-image: url("images/picture1.jpg");
 }
 
 .header2{
-  background-image: url("imges/picture2.jpg");
+  background-image: url("images/picture2.jpg");
 }
 
 .header3{
-  background-image: url("imges/picture3.jpg");
+  background-image: url("images/picture3.jpg");
 }
 
 .header4{
-  background-image: url("imges/picture2.jpg");
+  background-image: url("images/picture4.jpg");
 }
 
 .header1, .header2, .header3, .header4{
-  background-position: center top;
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 } 
+
+.header1, .header2{
+  background-position: center top;
+}
+
+.header3, .header4{
+  background-position: center center;
+}
    
 .logo{ 
   padding: 0.5rem;
@@ -161,7 +168,7 @@ header{
 }
 
 i{
-  color: black;
+  color: #f0f0f0;
 }
 
 .close-icon{
@@ -229,6 +236,10 @@ i{
   max-width: 90%;
 }
 
+.fa-shopping-cart{
+  cursor: pointer;
+}
+
 .fas{
   font-size: 1.5rem;
 }
@@ -241,9 +252,7 @@ i{
 /*-------------------------------MEDIA QUERY HEADER TABLETTE----------------------------------*/
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
-  .header1{
-    background-size: cover;
-  }
+  
   .header-container{
     padding: 0.5rem;
   }
@@ -271,9 +280,7 @@ i{
 /*-------------------------------MEDIA QUERY HEADER MOBILE------------------------------------*/
 
 @media screen and (max-width: 768px){
-  .header1{
-    background-size: cover;
-  } 
+  
   .logo{ 
     font-size: 1.2rem;
   }
@@ -349,8 +356,7 @@ i{
   margin-bottom: 2rem;
 }
 .product-info{
-  font-size: 16px;
-  text-shadow: 1px 1px 2px black;
+  font-size: 15px;
 }
 .product-card img{
   width: 200px;
@@ -405,9 +411,7 @@ i{
   .product-card img, .button{
     transition: all 0.4s ease-in-out;
   }
-  .product-info h3, .product-info h4 {
-    font-size: 15px;
-  }
+  
 }
 
 /*-------------------------------------MEDIA QUERY SECTIONS TABLETTE----------------------------*/
@@ -438,7 +442,7 @@ i{
     padding: 0.2rem;
   }
   .product-info{
-    font-size: 14px;
+    font-size: 12px;
   }
   .product-card img{
     width: 100%;

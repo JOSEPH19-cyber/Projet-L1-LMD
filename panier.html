@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>panier - N-store</title>
+    <link rel="stylesheet" href="panier.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>N-store</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="menu-list">
+                    <li><i class="fas fa-times close-icon"></i></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="maillots.html">Maillots</a></li>
+                    <li><a href="cargos.html">Cargos</a></li>
+                    <li><a href="baskets.html">Baskets</a></li>
+                    <li class><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <i class="fas fa-bars hamburger-icon"></i>
+        </div>
+    </header>
+
+    <main>
+        <section class="cart-section">
+            <h2>Votre Panier</h2>
+
+            <table class="cart-table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="panier-table-body">
+                </tbody>
+            </table>
+
+            <div class="cart-actions">
+                <button id="vider-panier">Vider le panier</button>
+                <p id="panier-total">Total : 0$</p>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="panier.js"></script>
+</body>
+</html>

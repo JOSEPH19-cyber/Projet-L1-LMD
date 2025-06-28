@@ -6,6 +6,8 @@ const overlay = document.querySelector(".overlay");
 const closeIcon = document.querySelector(".close-icon");
 const hamburgerLinks = document.querySelectorAll(".menuLinks");
 const headerContainer = document.querySelector(".header-container");
+const panierIcon = document.querySelector(".fa-shopping-cart");
+
 
 // ------------------ MENU HAMBURGER ------------------ //
 
@@ -38,6 +40,15 @@ if (hamburgerLinks.length > 0) {
         link.addEventListener("click", closeMenu);
     });
 }
+
+//-----------------------PAGE PANIER-------------------------------------//
+
+panierIcon.addEventListener("click", () => {
+  window.location.href = "panier.html";
+});
+
+//-----------------------PAGE PANIER-------------------------------------//
+
 
 // ------------------ BACKGROUND AU SCROLL ------------------ //
 
