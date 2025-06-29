@@ -1,131 +1,106 @@
-//---------------------------DECLARATION DES VARIABLES-------------------------------------//
+//---------------------------------- MENU HAMBURGER ----------------------------------//
 
 const menu  = document.querySelector(".hamburger-icon"); 
 const openMenu = document.querySelector(".menu-list");
 const closeMenuBtn = document.querySelector(".close-icon");
 
-//---------------------------DECLARATION DES VARIABLES-------------------------------------//
-
-
-//----------------------------OUVERTURE DU MENU HAMBURGER----------------------------------//
-
-menu.addEventListener("click", () =>{
+menu.addEventListener("click", () => {
     openMenu.classList.add("open");
 });
 
-//----------------------------OUVERTURE DU MENU HAMBURGER----------------------------------//
-
-
-//----------------------------FERMETURE DU MENU HAMBURGER----------------------------------//
-
-closeMenuBtn.addEventListener("click", () =>{
+closeMenuBtn.addEventListener("click", () => {
     openMenu.classList.remove("open");
 });
 
-//----------------------------FERMETURE DU MENU HAMBURGER----------------------------------//
 
 
+//---------------------------------- PANIER ----------------------------------//
 
-
-
-
-
-
-
-
-
-
-
-const tbody = document.getElementById("panier-table-body"); 
+const tbody = document.getElementById("panier-table-body");
+const totalPanier = document.getElementById("panier-total");
+const btnVider = document.getElementById("vider-panier");
 
 let panier = JSON.parse(localStorage.getItem("panier")) || [];
 
+//  Affichage des produits du panier
 panier.forEach(product => {
+    
     const tr = document.createElement("tr");
-    tbody.appendChild(tr);
-
-    // Colonnes du tableau (td)
     const td_name = document.createElement("td");
     const td_price = document.createElement("td");
     const td_quantity = document.createElement("td");
-    const td_delete = document.createElement("td");
     const td_total = document.createElement("td");
+    const td_delete = document.createElement("td");
 
-    // Remplir les colonnes avec les données du produit
+    // Remplir les colonnes
     td_name.textContent = product.name;
     td_price.textContent = product.price;
     td_quantity.textContent = product.quantity;
 
-    // Créer le bouton de suppression
+    //  Calculer le total pour ce produit
+    let prix = product.price.replace("$", "");
+    let prixNum = parseFloat(prix);
+    let totalProduit = prixNum * product.quantity;
+    td_total.textContent = totalProduit.toFixed(2) + "$";
+
+    //  Créer le bouton de suppression
     const btn_delete = document.createElement("button");
     btn_delete.textContent = "Supprimer";
     td_delete.appendChild(btn_delete);
 
-    // Ajouter les colonnes à la ligne
+    //  Ajouter les colonnes à la ligne
     tr.appendChild(td_name);
     tr.appendChild(td_price);
     tr.appendChild(td_quantity);
-    tr.appendChild(td_total)
+    tr.appendChild(td_total);
     tr.appendChild(td_delete);
 
-    // Écouteur sur le bouton "Supprimer"
+    tbody.appendChild(tr);
+
+    //  Événement sur le bouton Supprimer
     btn_delete.addEventListener("click", () => {
         const nom = product.name;
         const prix = product.price;
 
-        //  Confirmation avant suppression
         if (confirm(`Voulez-vous vraiment supprimer ${nom} du panier ?`)) {
-            // Supprimer du tableau
+            //  Supprimer du tableau
             panier = panier.filter(item => !(item.name === nom && item.price === prix));
 
-            // Mettre à jour le localStorage
+            //  Mettre à jour le localStorage
             localStorage.setItem("panier", JSON.stringify(panier));
 
-            // Supprimer du HTML
+            //  Mettre à jour le total général
+            updateTotal();
+
+            //  Supprimer la ligne du tableau HTML
             tr.remove();
         }
     });
+});
 
-    btnVider = document.getElementById("vider-panier");
+//  Événement sur le bouton "Vider le panier"
+btnVider.addEventListener("click", () => {
+    if (confirm("Voulez-vous vraiment vider tout le panier ?")) {
+        localStorage.removeItem("panier");
+        tbody.innerHTML = "";
+        totalPanier.textContent = "TOTAL GENERALE : 0.00$";
+        alert("Le panier a été vidé.");
+    }
+});
 
-    btnVider.addEventListener("click", () => {
-        if(confirm("Voulez-vous vraiment vider tout le panier"))
-        {
-            localStorage.removeItem("panier");
-            tbody.innerHTML = "";
-
-            confirm("Le panier a été vidé.");
-        }
-    });
-
-    //calcul du total
-    let prix = product.price.replace("$", "");
-    let prixNum = parseFloat(prix);
-    let totalProduit = prixNum * product.quantity;
-
-    td_total.textContent = totalProduit.toFixed(2) + "$";
-
-    // calcul du panier total
-
-    // 1. Cibler la balise <p id="panier-total">
-    let total = document.getElementById("panier-total");
-
-    // 2. Initialiser le total général à 0
+//  Fonction de mise à jour du total général
+function updateTotal() {
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
     let totalgeneral = 0;
 
-    // 3. Parcourir chaque produit du panier
     panier.forEach(product => {
-        // Supprimer le symbole $ du prix
         let prix = product.price.replace("$", "");
-
-        // Convertir en nombre
-        let prixArt = parseFloat(prix);
-
-        // Ajouter au total général : prix * quantité
-        totalgeneral += prixArt * product.quantity;
+        let prixNum = parseFloat(prix);
+        totalgeneral += prixNum * product.quantity;
     });
 
-    // 4. Afficher le total dans la balise <p>
-    total.textContent = "TOTAL GENERALE : " + totalgeneral.toFixed(2) + "$";
+    totalPanier.textContent = "TOTAL GENERALE : " + totalgeneral.toFixed(2) + "$";
+}
 
-});
+//  Calcul initial du total au chargement de la page
+updateTotal();

@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll(".button");
 
 //  Parcourt chaque bouton individuellement
 buttons.forEach(button => {
-  //  Ajoute un écouteur d’événement pour le clic
+
   button.addEventListener("click", () => {
 
     //  Récupère les informations d’inscription depuis le localStorage
@@ -13,7 +13,7 @@ buttons.forEach(button => {
     //  Si aucun utilisateur n’est inscrit, on bloque l’ajout
     if (!username || !password) {
       alert("Vous n'êtes pas inscrit. Dirigez-vous vers la page contact pour vous inscrire.");
-      return; //  Stoppe l’exécution ici
+      return; 
     }
 
     //  Trouve la carte produit qui contient le bouton cliqué
@@ -30,17 +30,15 @@ buttons.forEach(button => {
     const product = {
       name: nom,
       price: prix,
-      quantity: 1 //  Commence avec une quantité de 1
+      quantity: 1 
     };
 
     //  Vérifie si le produit existe déjà dans le panier (même nom + prix)
     let existingProduct = panier.find(item => item.name === product.name && item.price === product.price);
 
-    //  Si le produit existe, on augmente juste la quantité
     if (existingProduct) {
       existingProduct.quantity++;
     } else {
-      //  Sinon, on ajoute ce nouveau produit au panier
       panier.push(product);
     }
 

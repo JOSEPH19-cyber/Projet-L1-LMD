@@ -36,7 +36,7 @@ header{
   z-index: 1;
 }
 
-/* overlay */
+
 .header-overlay{
   position: absolute;
   top: 0px;
