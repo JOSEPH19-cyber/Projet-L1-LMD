@@ -9,7 +9,7 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-   background-color: #fdfdfd;
+  background-color: #fdfdfd;
 }
 body.no-scroll {
   overflow: hidden;
@@ -350,6 +350,8 @@ i{
 .product-card{
   height: 55vh;
   width: 20vw;
+  border: 1px solid black;
+  box-shadow: 2px 2px 12px black;
   border-radius: 5px;
   text-align: center;
   padding: 1rem;

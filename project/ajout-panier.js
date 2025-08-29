@@ -12,7 +12,7 @@ buttons.forEach(button => {
 
     //  Si aucun utilisateur n’est inscrit, on bloque l’ajout
     if (!username || !password) {
-      alert("Vous n'êtes pas inscrit. Dirigez-vous vers la page contact pour vous inscrire.");
+      alert("Vous n'êtes pas inscrit. Dirigez-vous vers la page Inscription pour vous inscrire.");
       return; 
     }
 
